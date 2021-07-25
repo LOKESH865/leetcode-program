@@ -2,8 +2,14 @@
 using namespace std;
 class Solution {
 public:
-    int removeDuplicates(vector<int>& nums) {
-        nums.erase(std::unique(nums.begin(), nums.end()), nums.end());
-        return nums.size();
+    int removeElement(vector<int>& nums, int val) {
+        int i = 0;
+        for (int elem: nums){
+            if (elem != val){
+                nums[i] = elem;                
+                i++;
+            }
+        }
+        return i;
     }
 };
